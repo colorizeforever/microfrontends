@@ -1,0 +1,78 @@
+.main {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background-color: #F4F4F4;
+  display: grid;
+  grid-template-columns: 0.05fr 1fr;
+  grid-template-rows: 0.1fr 0.9fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "menu header"
+    "menu main-content";
+  background-attachment: fixed;
+}
+
+.menu {
+  grid-area: menu;
+}
+
+.header {
+  grid-area: header;
+}
+
+.main-content {
+  height: auto;
+  padding: 20px;
+  grid-area: main-content;
+}
+
+.container {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 20px 20px;
+  grid-auto-flow: column;
+  grid-template-areas:
+    "newUsers users region"
+    "revenue table table"
+    "products table table";
+}
+
+.newUsers {
+  grid-area: newUsers;
+}
+
+.revenue {
+  grid-area: revenue;
+}
+
+.products {
+  grid-area: products;
+}
+
+.users {
+  grid-area: users;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.region {
+  grid-area: region;
+}
+
+.table {
+  grid-area: table;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.block {
+  background-color: white;
+  border-radius: 5px;
+}
+

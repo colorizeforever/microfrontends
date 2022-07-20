@@ -1,0 +1,65 @@
+<div class="main__passengers">
+  <div class="passengers__header">
+    <h3>All users</h3>
+  </div>
+  <div class="passengers__table">
+    <div class="table__header">
+      <div class="thead"
+           *ngFor="let headerValue of usersHeader"
+      >
+        <span
+          [ngClass]="sortField === headerValue ? 'selected' : 'not__selected'"
+          (click)="setSortField(headerValue)">
+          {{headerValue}}
+        </span>
+        <div class="icons">
+          <i
+            [ngClass]="sortDirection === 'asc' ? 'selected' : 'not__selected'"
+            class="fa-solid fa-sort-up"
+            (click)="setSortDirection('asc')">
+          </i>
+          <i
+            [ngClass]="sortDirection === 'desc' ? 'selected' : 'not__selected'"
+            class="fa-solid fa-sort-down"
+            (click)="setSortDirection('desc')">
+          </i>
+        </div>
+      </div>
+
+    </div>
+    <div class="table__body">
+      <div class="tbody__wrapper"
+           *ngFor="let user of (usersList$ | async) ?? [] | sort : sortEnabled : sortDirection : sortField ">
+        <ng-container *ngTemplateOutlet="userDivs; context: {
+        $implicit: [
+        user.name,
+        user.age | age,
+        user.trips,
+        user.country,
+        user.nickname,
+        user.company,
+        user.skills,
+        user.gender
+        ]
+        }
+        ">
+
+        </ng-container>
+      </div>
+    </div>
+  </div>
+  <div class="passengers__pagination">
+    <mat-paginator
+      [length]="length$ | async" [pageSizeOptions]="[8, 20, 50]"
+      aria-label="Select page"
+      (page)="pageOptions($event)"
+    >
+    </mat-paginator>
+  </div>
+</div>
+
+<ng-template #userDivs let-userInfo>
+  <div class="tbody" *ngFor="let info of userInfo">
+    <span>{{info}}</span>
+  </div>
+</ng-template>

@@ -1,0 +1,11 @@
+{
+  "$schema": "./node_modules/nx/schemas/workspace-schema.json",
+  "version": 2,
+  "projects": {
+    "remote": "apps/remote",
+    "remote-e2e": "apps/remote-e2e",
+    "shared-data-access-user": "libs/shared/data-access-user",
+    "shell": "apps/shell",
+    "shell-e2e": "apps/shell-e2e"
+  }
+}

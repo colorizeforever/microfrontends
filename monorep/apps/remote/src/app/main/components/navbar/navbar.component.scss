@@ -1,0 +1,95 @@
+.menu__main {
+  margin: 0;
+  width: 100%;
+  background-color: #364456;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 99;
+
+  .menu__main__icons {
+    color: white;
+    width: 100%;
+    height: 7%;
+    border-top: 2px solid #2d3a4a;
+
+    .routes {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+
+      span {
+        width: 10%;
+      }
+
+      .routes__text {
+        height: 0;
+        overflow: hidden;
+      }
+    }
+
+  }
+
+  .menu__main__icons:first-child {
+    border: none;
+  }
+
+  .active__link {
+    background-color: #2F3B4D;
+  }
+
+}
+
+@keyframes smoothText {
+  to {
+    height: 20px;
+    overflow: visible;
+  }
+}
+
+@keyframes smoothMoving {
+  to {
+    justify-content: space-around;
+  }
+}
+
+.menu__main:hover {
+  transition: 1.5s;
+  width: 200%;
+
+  .menu__main__icons {
+    .routes {
+      justify-content: space-around;
+
+      span {
+        transition: 1.5s;
+        width: 40%;
+      }
+
+      .routes__text {
+        animation-duration: 1.5s;
+        animation-name: smoothText;
+        animation-fill-mode: forwards;
+      }
+    }
+  }
+}
+
+.menu__main:not(:hover) {
+  transition: 1.5s;
+
+  .menu__main__icons {
+    .routes {
+      justify-content: center;
+
+      span {
+        transition: 1.5s;
+        width: 10%;
+      }
+    }
+  }
+}

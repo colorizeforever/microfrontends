@@ -1,0 +1,25 @@
+<div class="sign__form">
+  <div class="form__container">
+    <form [formGroup]="signInForm">
+      <h2>Sign In</h2>
+      <input type="text" placeholder="Enter your login" formControlName="login">
+      <div class="error" *ngIf="signInForm.controls['login'].invalid && signInForm.controls['login'].touched">
+        {{getErrorMessage()}}
+      </div>
+      <input type="password" placeholder="Enter your password" formControlName="password">
+      <div class="error" *ngIf="signInForm.controls['password'].invalid && signInForm.controls['password'].touched">
+        {{getErrorPasswordMessage()}}
+      </div>
+      <button
+        [disabled]="signInForm.invalid"
+        class="btn btn-primary"
+        (click)="onSignIn()"
+      >Sign In
+      </button>
+      <button
+        [routerLink]="['/signup']"
+      >Sign Up
+      </button>
+    </form>
+  </div>
+</div>

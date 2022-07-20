@@ -1,0 +1,12 @@
+<div class="menu__main">
+  <div
+    highLightDirective
+    class="menu__main__icons"
+    *ngFor="let element of navBarElems;"
+  >
+    <div class="routes" routerLinkActive="active__link" [routerLink]="[element.route]">
+      <span> <mat-icon>{{element.icon}}</mat-icon> </span>
+      <span class="routes__text">{{element.name}}</span>
+    </div>
+  </div>
+</div>

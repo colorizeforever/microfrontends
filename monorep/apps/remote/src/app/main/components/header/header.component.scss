@@ -1,0 +1,15 @@
+header {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  .header__container {
+    width: 97%;
+    display: flex;
+    span {
+      margin-left: 10px;
+    }
+    .header-spacer {
+      flex: 1 1 auto;
+    }
+  }
+}
