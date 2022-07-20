@@ -1,5 +1,9 @@
 
 
+# Installation and launching
+Firstly, Use npm install, if you will have some troubles try to use it with flags --legacy--peer-deep or --forse.
+Secondly, use nx serve shell and nx serve remote in your terminal, it will launch applications.
+
 # Monorep
 
 This project was generated using [Nx](https://nx.dev).
